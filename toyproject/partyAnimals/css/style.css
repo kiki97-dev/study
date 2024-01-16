@@ -1,0 +1,300 @@
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "yg-jalnan";
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+table,
+td,
+th {
+  border-collapse: collapse;
+}
+
+fieldset {
+  border: none;
+}
+
+input,
+a,
+button {
+  outline: 1;
+}
+
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.hidden {
+  position: absolute;
+  top: -9999px;
+  opacity: 0;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-image: url(../img/desktop-01.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 5%;
+  perspective: 700px;
+  position: relative;
+}
+
+.todolist {
+  width: 60%;
+  height: 75vh;
+  box-sizing: border-box;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform: rotateY(1deg);
+  transform-origin: left;
+  display: flex;
+  flex-direction: column;
+}
+.todolist__top {
+  padding: 20px 30px;
+  box-sizing: border-box;
+  background-color: #f7d260;
+  display: flex;
+  justify-content: space-between;
+}
+.todolist__top h1 {
+  font-family: "yg-jalnan";
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 56px;
+  line-height: 1;
+  text-shadow: -3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.todolist__top button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #b7f059;
+  box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  font-size: 34px;
+  line-height: 1;
+  font-family: "yg-jalnan";
+  color: rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s;
+}
+.todolist__top button i {
+  font-size: 36px;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+  margin-right: 10px;
+}
+.todolist__top button:hover {
+  box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.6);
+}
+.todolist__mid {
+  box-sizing: border-box;
+  padding: 20px 30px 20px 30px;
+}
+.todolist__mid-inner {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.1), 4px -4px 5px rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+  padding: 20px 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.todolist__mid-inner i {
+  color: #e8a124;
+  font-size: 30px;
+  margin-right: 20px;
+}
+.todolist__mid-day, .todolist__mid-weather {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  box-sizing: border-box;
+}
+.todolist__mid-day p, .todolist__mid-weather p {
+  font-size: 24px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.7);
+}
+.todolist__mid-day p span, .todolist__mid-weather p span {
+  display: block;
+}
+.todolist__mid-day p span:first-child, .todolist__mid-weather p span:first-child {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.55);
+}
+.todolist__btm {
+  box-sizing: border-box;
+  padding: 0px 30px 30px 30px;
+  flex: 1;
+  overflow-y: auto;
+}
+.todolist__btm-inner {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  padding: 20px 20px;
+  border-radius: 20px;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+.todolist__btm-inner ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.todolist__btm-inner ul li {
+  width: 49%;
+  margin-right: 2%;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.1), 4px -4px 5px rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+  padding: 15px 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.todolist__btm-inner ul li p {
+  font-size: 19px;
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: -1px;
+}
+.todolist__btm-inner ul li button {
+  background: none;
+  line-height: 1;
+  color: #ed8052;
+  transition: all 0.3s;
+}
+.todolist__btm-inner ul li button i {
+  font-size: 38px;
+}
+.todolist__btm-inner ul li button:hover {
+  color: #f53c2f;
+}
+.todolist__btm-inner ul li:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+.list-add {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+.list-add.on {
+  display: flex;
+}
+.list-add__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+.list-add__popup {
+  width: 90%;
+  max-width: 700px;
+  box-sizing: border-box;
+  border-radius: 40px;
+  background-color: #fce1a0;
+  overflow: hidden;
+  box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.1);
+}
+.list-add__popup-top {
+  background-color: #fdd25e;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.list-add__popup-top p {
+  line-height: 1;
+  font-size: 26px;
+  color: #cc6e3f;
+}
+.list-add__popup-top button {
+  line-height: 1;
+  font-size: 34px;
+  color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+.list-add__popup-mid {
+  box-sizing: border-box;
+  padding: 25px 30px;
+  display: flex;
+}
+.list-add__popup-mid input {
+  width: 70%;
+  box-sizing: border-box;
+  border: none;
+  margin-right: 2%;
+  padding: 20px;
+  font-size: 20px;
+  box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.1), 4px -4px 5px rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  background-color: #fdefd1;
+  color: rgba(0, 0, 0, 0.8);
+}
+.list-add__popup-mid button {
+  width: 28%;
+  box-sizing: border-box;
+  color: #cc6e3f;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #fae579;
+  box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.1), 4px -4px 5px rgba(255, 255, 255, 0.15);
+  font-size: 26px;
+  line-height: 1;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,39 @@
+* {
+	margin: 0px;
+	padding: 0px;
+    font-family: 'yg-jalnan';
+}
+ol,
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+table,
+td,
+th {
+	border-collapse: collapse;
+}
+fieldset {
+	border: none;
+}
+input,
+a,
+button {
+	outline: 1;
+}
+button {
+	background: inherit;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 0;
+	overflow: visible;
+	cursor: pointer;
+}
+.hidden {
+	position: absolute;
+	top: -9999px;
+	opacity: 0;
+}
