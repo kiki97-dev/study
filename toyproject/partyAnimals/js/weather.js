@@ -15,7 +15,6 @@ function onGeoOk(pos) {
         .then(res => res.json())
         .then(data => {
             $weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-            console.log($weatherIcon.src);
             $area.innerHTML = `${data.sys.country} ${data.name}`
             $weather.innerHTML = `${data.weather[0].main}  / ${data.main.temp}°C`
         })
