@@ -55,6 +55,8 @@ button {
   position: absolute;
   top: -9999px;
   opacity: 0;
+  width: 1px;
+  height: 1px;
 }
 
 .main {
@@ -131,7 +133,7 @@ button {
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.1), 4px -4px 5px rgba(255, 255, 255, 0.15);
   box-sizing: border-box;
-  padding: 20px 20px;
+  padding: 10px 20px;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -194,7 +196,22 @@ button {
   align-items: center;
   cursor: pointer;
 }
+.todolist__btm-inner ul li.on {
+  opacity: 0.5;
+}
+.todolist__btm-inner ul li.on .fa-square-check {
+  display: block;
+}
+.todolist__btm-inner ul li .fa-square-check {
+  color: #92b063;
+  font-size: 26px;
+  margin-right: 10px;
+  line-height: 1;
+  display: none;
+}
 .todolist__btm-inner ul li p {
+  line-height: 1.5;
+  flex: 1;
   font-size: 19px;
   color: rgba(0, 0, 0, 0.7);
 }

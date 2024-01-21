@@ -18,17 +18,31 @@ $todoInputBtn.addEventListener("click", () => {
 
 $todolistUl.addEventListener("click", (e) => {
     // 리스트 삭제 버튼 클릭시 li삭제
-    const liDeleteBtn = e.target.parentNode;
-    if (liDeleteBtn.classList.contains('todolist-delete')) {
-        deleteList(liDeleteBtn.parentNode.id);
-        liDeleteBtn.parentNode.remove();
+    const clickTarget = e.target;
+    const clickTargetParentNode = e.target.parentNode;
+
+    if (clickTargetParentNode.classList.contains('todolist-delete')) {
+        deleteList(clickTargetParentNode.parentNode.id);
+        clickTargetParentNode.parentNode.remove();
+    } else if (clickTargetParentNode.tagName === 'LI') {
+        clickTargetParentNode.classList.toggle('on');
+        updateList(clickTargetParentNode.id);
+
+    } else if (clickTarget.tagName === 'LI') {
+        clickTarget.classList.toggle('on');
+        updateList(clickTarget.id);
     }
 })
 
 
-function createTodo(text, id) {
+function createTodo(text, id, on = false) {
+    let checkOn = '';
+    if(on) {
+        checkOn = `on`;
+    }
     return (
-        `<li class="todolist-li" id=${id}>
+        `<li class="todolist-li ${checkOn}" id=${id} >
+            <i class="fa-solid fa-square-check"></i>
             <p>${text}</p>
             <button class="todolist-delete">
                 <i class="fa-solid fa-delete-left"></i>
@@ -41,12 +55,12 @@ function resetList() {
     if (listData.length > 0) {
         $todolistUl.innerHTML = '';
         listData.forEach(el => {
-            $todolistUl.innerHTML += createTodo(el.text, el.id);
+            $todolistUl.innerHTML += createTodo(el.text, el.id, el.do);
         });
     }
 }
 
-function setList(text ,id) {
+function setList(text, id) {
     const listDataObj = {
         text: text,
         id: id,
@@ -57,8 +71,20 @@ function setList(text ,id) {
 }
 
 function deleteList(id) {
-    listData = listData.filter(el=> {
+    listData = listData.filter(el => {
         return el.id != id;
     })
+    localStorage.setItem('listData', JSON.stringify(listData));
+}
+
+function updateList(id) {
+    const target = listData.find(el => el.id == id);
+    if (target) {
+        if (target.do) {
+            target.do = false
+        } else {
+            target.do = true;
+        }
+    }
     localStorage.setItem('listData', JSON.stringify(listData));
 }

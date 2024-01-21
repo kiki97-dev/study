@@ -71,7 +71,7 @@
 			box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.1),
 				4px -4px 5px rgba(255, 255, 255, 0.15);
 			box-sizing: border-box;
-			padding: 20px 20px;
+			padding: 10px 20px;
 			border-radius: 20px;
 			display: flex;
 			justify-content: space-between;
@@ -122,6 +122,12 @@
 				display: flex;
 				flex-wrap: wrap;
 				li {
+					&.on {
+						opacity: 0.5;
+						.fa-square-check {
+							display: block;
+						}
+					}
 					width: 49%;
 					margin-right: 2%;
 					margin-bottom: 10px;
@@ -135,7 +141,16 @@
 					justify-content: space-between;
 					align-items: center;
 					cursor: pointer;
+					.fa-square-check {
+						color: #92b063;
+						font-size: 26px;
+						margin-right: 10px;
+						line-height: 1;
+						display: none;
+					}
 					p {
+						line-height: 1.5;
+						flex: 1;
 						font-size: 19px;
 						color: rgba(0, 0, 0, 0.7);
 					}

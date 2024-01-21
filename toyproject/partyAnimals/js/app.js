@@ -3,7 +3,6 @@ const $addClose = document.querySelector(".addClose");
 const $addPopup = document.querySelector(".list-add");
 const $todoInput = document.querySelector(".todo-input");
 
-
 $addBtn.addEventListener("click", () => {
     $addPopup.classList.add("on");
     $todoInput.focus();
