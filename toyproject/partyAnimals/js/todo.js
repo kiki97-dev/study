@@ -20,24 +20,21 @@ $todolistUl.addEventListener("click", (e) => {
     // 리스트 삭제 버튼 클릭시 li삭제
     const clickTarget = e.target;
     const clickTargetParentNode = e.target.parentNode;
+    const clickTargetLi = clickTarget.closest('li');
 
     if (clickTargetParentNode.classList.contains('todolist-delete')) {
         deleteList(clickTargetParentNode.parentNode.id);
         clickTargetParentNode.parentNode.remove();
-    } else if (clickTargetParentNode.tagName === 'LI') {
-        clickTargetParentNode.classList.toggle('on');
-        updateList(clickTargetParentNode.id);
-
-    } else if (clickTarget.tagName === 'LI') {
-        clickTarget.classList.toggle('on');
-        updateList(clickTarget.id);
+    } else if (clickTargetLi.tagName === 'LI') {
+        clickTargetLi.classList.toggle('on');
+        updateList(clickTargetLi.id);
     }
 })
 
 
 function createTodo(text, id, on = false) {
     let checkOn = '';
-    if(on) {
+    if (on) {
         checkOn = `on`;
     }
     return (
