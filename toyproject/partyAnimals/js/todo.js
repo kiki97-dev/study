@@ -37,7 +37,7 @@ function createTodo(text, id, on = false) {
     if (on) {
         checkOn = `on`;
     }
-    return (
+    return (/*html*/
         `<li class="todolist-li ${checkOn}" id=${id} >
             <i class="fa-solid fa-square-check"></i>
             <p>${text}</p>
