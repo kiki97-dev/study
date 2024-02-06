@@ -14,16 +14,19 @@ $addClose.addEventListener("click", () => {
 })
 
 
-//icon 클릭 이벤트
+//icon 클릭 이벤트, 배경 이미지 미리 로드
 const $iconBtn = document.querySelectorAll(".icon>li>button");
 const $main = document.querySelector(".main");
+let images = [];
 
 for (let i = 0; i < $iconBtn.length; i++) {
     let img = new Image();
-    img.src = `./img/desktop-0${i}.png
-    `
+    img.src = `./img/desktop-0${i}.png`;
+    img.onload = function() {
+        images[i] = this;
+    };
     $iconBtn[i].addEventListener("click", () => {
-        $main.style.backgroundImage = `url(./img/desktop-0${i}.png)`
+        $main.style.backgroundImage = `url(${images[i].src})`;
     })
 }
 
