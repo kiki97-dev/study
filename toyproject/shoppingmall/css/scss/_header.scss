@@ -1,0 +1,163 @@
+/* header */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 60px;
+	pointer-events: none;
+	&.on {
+		.h_logo h1 a {
+			color: #000;
+		}
+		.h_category ul li a {
+			color: #000;
+			&::after {
+				background-color: rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+
+	.h_wrap {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		pointer-events: none;
+	}
+
+	.h_logo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		pointer-events: auto;
+
+		h1 {
+			font-size: 0;
+			a {
+				transition: all 0.3s;
+				font-size: 34px;
+				color: #fff;
+				font-style: italic;
+				font-weight: 900;
+				font-family: "Roboto", sans-serif;
+				letter-spacing: -0.5;
+			}
+		}
+	}
+
+	.h_category {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		pointer-events: auto;
+
+		ul {
+			li {
+				font-size: 0;
+				margin-bottom: 30px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				a {
+					transition: all 0.3s;
+					font-family: "Nunito", sans-serif;
+					color: #fff;
+					font-size: 16px;
+					font-weight: 700;
+					position: relative;
+					&::after {
+						content: "";
+						display: block;
+						width: 0%;
+						height: 7px;
+						position: absolute;
+						bottom: 3px;
+						left: 0px;
+						background-color: rgba(255, 255, 255, 0.4);
+						z-index: -1;
+						transition: all 0.3s;
+					}
+
+					&:hover {
+						&::after {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.h_nav {
+		position: absolute;
+		top: 0;
+		right: 0px;
+		pointer-events: auto;
+
+		ul {
+			display: flex;
+			li {
+				font-size: 0;
+				margin-right: 10px;
+				&.hn_menu {
+					a {
+						background-color: #333;
+						i {
+							color: #fff;
+						}
+					}
+				}
+
+				a {
+					width: 50px;
+					height: 50px;
+					border-radius: 50px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: #fff;
+					&:hover {
+						background-color: #333;
+						i {
+							color: #fff;
+						}
+					}
+
+					i {
+						line-height: 1;
+						font-size: 18px;
+						color: #222;
+					}
+				}
+			}
+		}
+	}
+	.h_top {
+		position: absolute;
+		right: 0px;
+		bottom: 0;
+		pointer-events: auto;
+		> button {
+			width: 50px;
+			height: 50px;
+			border-radius: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #fff;
+            border: 2px solid #222;
+            &:hover {
+                background-color: #222;
+                color: #fff;
+            }
+            i {
+                font-size: 20px;
+            }
+		}
+	}
+}

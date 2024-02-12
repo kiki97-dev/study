@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3팀 쇼핑몰 메인 와이어 프레임</title>
+    <!-- 스와이퍼 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- 웹 폰트 나눔스퀘어 네오 -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/931727edad.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="h_wrap">
+            <div class="h_logo">
+                <h1>
+                    <a href="">
+                        3TEAM
+                    </a>
+                </h1>
+            </div>
+            <div class="h_category">
+                <ul>
+                    <li>
+                        <a href="">ALL</a>
+                    </li>
+                    <li>
+                        <a href="">NEW</a>
+                    </li>
+                    <li>
+                        <a href="">BEST</a>
+                    </li>
+                    <li>
+                        <a href="">JACKET</a>
+                    </li>
+                    <li>
+                        <a href="">BLAZER</a>
+                    </li>
+                    <li>
+                        <a href="">SHIRTS</a>
+                    </li>
+
+                </ul>
+
+            </div>
+            <div class="h_nav">
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </a>
+                    </li>
+                    <li class="hn_menu">
+                        <a href="">
+                            <i class="fa-solid fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="h_menu">
+
+            </div>
+            <div class="h_top">
+                <button>
+                    <i class="fa-solid fa-chevron-up"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="main01">
+        <div class="main-slide">
+            <div class="main-slide__container">
+
+                <ul class="swiper-wrapper main-slide__wrapper">
+                    <li class="swiper-slide main-slide__slide">
+                        <a href="">
+                            <img src="./img/main01.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="swiper-slide main-slide__slide">
+                        <a href="">
+                            <img src="./img/main02.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="swiper-slide main-slide__slide">
+                        <a href="">
+                            <img src="./img/main03.jpg" alt="">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="main-slide__pagination"></div>
+
+        </div>
+    </section>
+    <!-- 메인01 슬라이드 스와이퍼 -->
+    <script>
+        let swiper = new Swiper(".main-slide__container", {
+            speed: 800,
+            loop: true,
+            effect: "fade",
+            pagination: {
+                el: ".main-slide__pagination",
+                dynamicBullets: true,
+            },
+            autoplay: {
+                delay: 2000,
+            },
+        });
+    </script>
+
+    <section class="main02">
+        <div class="main02_inner">
+            <div class="main02_title">
+                <strong>BEST PICK</strong>
+                <h3>베스트 픽</h3>
+                <p>
+                    상품의 별점과 태그기능은 추후에 시간이 남으면 추가하고 싶어요
+                </p>
+            </div>
+            <ul class="product-list">
+                <li>
+                    <a href="" class="pl_img">
+                        <img src="./img/pl_01.jpg" alt="">
+                    </a>
+                    <a href="" class="pl_title">
+                        크래킹 스냅 레글런 후드티 블랙
+                    </a>
+                    <p class="pl_option">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <span class="pl_review-num">10</span>
+                    </p>
+                    <p class="pl_price">
+                        59,800원
+                        <span class="pl_price_before">
+                            92,000원
+                        </span>
+                        <span class="pl_price_discount-rate">
+                            14%
+                        </span>
+                    </p>
+                    <p class="pl_tag">
+                        <span class="tag-new">NEW</span>
+                        <span class="tag-best">BEST</span>
+                        <span class="tag-event">EVENT</span>
+                    </p>
+                </li>
+                <li>
+                    <a href="" class="pl_img">
+                        <img src="./img/pl_02.jpg" alt="">
+                    </a>
+                    <a href="" class="pl_title">
+                        크래킹 스냅 레글런 후드티 블랙
+                    </a>
+                    <p class="pl_option">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <span class="pl_review-num">10</span>
+                    </p>
+                    <p class="pl_price">
+                        59,800원
+                        <span class="pl_price_before">
+                            92,000원
+                        </span>
+                        <span class="pl_price_discount-rate">
+                            14%
+                        </span>
+                    </p>
+                    <p class="pl_tag">
+                        <span class="tag-new">NEW</span>
+                        <span class="tag-best">BEST</span>
+                        <span class="tag-event">EVENT</span>
+                    </p>
+                </li>
+                <li>
+                    <a href="" class="pl_img">
+                        <img src="./img/pl_03.jpg" alt="">
+                    </a>
+                    <a href="" class="pl_title">
+                        크래킹 스냅 레글런 후드티 블랙
+                    </a>
+                    <p class="pl_option">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <span class="pl_review-num">10</span>
+                    </p>
+                    <p class="pl_price">
+                        59,800원
+                        <span class="pl_price_before">
+                            92,000원
+                        </span>
+                        <span class="pl_price_discount-rate">
+                            14%
+                        </span>
+                    </p>
+                    <p class="pl_tag">
+                        <span class="tag-best">BEST</span>
+                    </p>
+                </li>
+                <li>
+                    <a href="" class="pl_img">
+                        <img src="./img/pl_04.jpg" alt="">
+                    </a>
+                    <a href="" class="pl_title">
+                        크래킹 스냅 레글런 후드티 블랙
+                    </a>
+
+                    <p class="pl_price">
+                        59,800원
+                    </p>
+
+                </li>
+
+                <li>
+                    <a href="" class="pl_img">
+                        <img src="./img/pl_05.jpg" alt="">
+                    </a>
+                    <a href="" class="pl_title">
+                        크래킹 스냅 레글런 후드티 블랙
+                    </a>
+                    <p class="pl_option">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <span class="pl_review-num">10</span>
+                    </p>
+                    <p class="pl_price">
+                        59,800원
+                        <span class="pl_price_before">
+                            92,000원
+                        </span>
+                        <span class="pl_price_discount-rate">
+                            14%
+                        </span>
+                    </p>
+                    <p class="pl_tag">
+                        <span class="tag-new">NEW</span>
+                        <span class="tag-best">BEST</span>
+                        <span class="tag-event">EVENT</span>
+                    </p>
+                </li>
+                <li>
+                    <a href="" class="pl_img">
+                        <img src="./img/pl_06.jpg" alt="">
+                    </a>
+                    <a href="" class="pl_title">
+                        크래킹 스냅 레글런 후드티 블랙
+                    </a>
+                    <p class="pl_option">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <span class="pl_review-num">10</span>
+                    </p>
+                    <p class="pl_price">
+                        59,800원
+                        <span class="pl_price_before">
+                            92,000원
+                        </span>
+                        <span class="pl_price_discount-rate">
+                            14%
+                        </span>
+                    </p>
+                    <p class="pl_tag">
+                        <span class="tag-new">NEW</span>
+                        <span class="tag-best">BEST</span>
+                        <span class="tag-event">EVENT</span>
+                    </p>
+                </li>
+                <li>
+                    <a href="" class="pl_img">
+                        <img src="./img/pl_07.jpg" alt="">
+                    </a>
+                    <a href="" class="pl_title">
+                        크래킹 스냅 레글런 후드티 블랙
+                    </a>
+                    <p class="pl_option">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <span class="pl_review-num">10</span>
+                    </p>
+                    <p class="pl_price">
+                        59,800원
+                        <span class="pl_price_before">
+                            92,000원
+                        </span>
+                        <span class="pl_price_discount-rate">
+                            14%
+                        </span>
+                    </p>
+                    <p class="pl_tag">
+                        <span class="tag-best">BEST</span>
+                    </p>
+                </li>
+                <li>
+                    <a href="" class="pl_img">
+                        <img src="./img/pl_08.jpg" alt="">
+                    </a>
+                    <a href="" class="pl_title">
+                        크래킹 스냅 레글런 후드티 블랙
+                    </a>
+                    <p class="pl_option">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <span class="pl_review-num">10</span>
+                    </p>
+                    <p class="pl_price">
+                        59,800원
+                    </p>
+
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="main03">
+        <div class="main03_inner">
+            <h3>이벤트 배너</h3>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut pariatur hic debitis vero accusantium
+                voluptates amet assumenda, quaerat in placeat quidem, sed natus, reiciendis officiis officia fugiat
+                distinctio. Ut, quia.
+            </p>
+            <a href="">
+                바로가기
+            </a>
+        </div>
+    </section>
+
+    <section class="main04">
+        <div class="main04_inner">
+            <div class="md_pick">
+                <h3>MD's Pick</h3>
+                <p>
+                    시간 남으면 아래 태그 클릭 시 <br> 태그에 맞는 상품들로 재정렬
+                </p>
+                <ul>
+                    <li>
+                        <a href="">
+                            #쌈뽕한
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            #20대한테 유명한
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            #심플한
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="main04_right">
+                <ul class="product-list product-list-03">
+                    <li>
+                        <a href="" class="pl_img">
+                            <img src="./img/pl_01.jpg" alt="">
+                        </a>
+                        <a href="" class="pl_title">
+                            크래킹 스냅 레글런 후드티 블랙
+                        </a>
+                        <p class="pl_option">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="pl_review-num">10</span>
+                        </p>
+                        <p class="pl_price">
+                            59,800원
+                            <span class="pl_price_before">
+                                92,000원
+                            </span>
+                            <span class="pl_price_discount-rate">
+                                14%
+                            </span>
+                        </p>
+                        <p class="pl_tag">
+                            <span class="tag-new">NEW</span>
+                            <span class="tag-best">BEST</span>
+                            <span class="tag-event">EVENT</span>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="" class="pl_img">
+                            <img src="./img/pl_02.jpg" alt="">
+                        </a>
+                        <a href="" class="pl_title">
+                            크래킹 스냅 레글런 후드티 블랙
+                        </a>
+                        <p class="pl_option">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="pl_review-num">10</span>
+                        </p>
+                        <p class="pl_price">
+                            59,800원
+                            <span class="pl_price_before">
+                                92,000원
+                            </span>
+                            <span class="pl_price_discount-rate">
+                                14%
+                            </span>
+                        </p>
+                        <p class="pl_tag">
+                            <span class="tag-new">NEW</span>
+                            <span class="tag-best">BEST</span>
+                            <span class="tag-event">EVENT</span>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="" class="pl_img">
+                            <img src="./img/pl_03.jpg" alt="">
+                        </a>
+                        <a href="" class="pl_title">
+                            크래킹 스냅 레글런 후드티 블랙
+                        </a>
+                        <p class="pl_option">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="pl_review-num">10</span>
+                        </p>
+                        <p class="pl_price">
+                            59,800원
+                            <span class="pl_price_before">
+                                92,000원
+                            </span>
+                            <span class="pl_price_discount-rate">
+                                14%
+                            </span>
+                        </p>
+                        <p class="pl_tag">
+                            <span class="tag-best">BEST</span>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="" class="pl_img">
+                            <img src="./img/pl_04.jpg" alt="">
+                        </a>
+                        <a href="" class="pl_title">
+                            크래킹 스냅 레글런 후드티 블랙
+                        </a>
+                        <p class="pl_option">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="pl_review-num">10</span>
+                        </p>
+                        <p class="pl_price">
+                            59,800원
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <a href="" class="pl_img">
+                            <img src="./img/pl_05.jpg" alt="">
+                        </a>
+                        <a href="" class="pl_title">
+                            크래킹 스냅 레글런 후드티 블랙
+                        </a>
+                        <p class="pl_option">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="pl_review-num">10</span>
+                        </p>
+                        <p class="pl_price">
+                            59,800원
+                            <span class="pl_price_before">
+                                92,000원
+                            </span>
+                            <span class="pl_price_discount-rate">
+                                14%
+                            </span>
+                        </p>
+                        <p class="pl_tag">
+                            <span class="tag-new">NEW</span>
+                            <span class="tag-best">BEST</span>
+                            <span class="tag-event">EVENT</span>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="" class="pl_img">
+                            <img src="./img/pl_06.jpg" alt="">
+                        </a>
+                        <a href="" class="pl_title">
+                            크래킹 스냅 레글런 후드티 블랙
+                        </a>
+                        <p class="pl_option">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="pl_review-num">10</span>
+                        </p>
+                        <p class="pl_price">
+                            59,800원
+                            <span class="pl_price_before">
+                                92,000원
+                            </span>
+                            <span class="pl_price_discount-rate">
+                                14%
+                            </span>
+                        </p>
+                        <p class="pl_tag">
+                            <span class="tag-new">NEW</span>
+                            <span class="tag-best">BEST</span>
+                            <span class="tag-event">EVENT</span>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="" class="pl_img">
+                            <img src="./img/pl_07.jpg" alt="">
+                        </a>
+                        <a href="" class="pl_title">
+                            크래킹 스냅 레글런 후드티 블랙
+                        </a>
+                        <p class="pl_option">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="pl_review-num">10</span>
+                        </p>
+                        <p class="pl_price">
+                            59,800원
+                            <span class="pl_price_before">
+                                92,000원
+                            </span>
+                            <span class="pl_price_discount-rate">
+                                14%
+                            </span>
+                        </p>
+                        <p class="pl_tag">
+                            <span class="tag-best">BEST</span>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="" class="pl_img">
+                            <img src="./img/pl_08.jpg" alt="">
+                        </a>
+                        <a href="" class="pl_title">
+                            크래킹 스냅 레글런 후드티 블랙
+                        </a>
+                        <p class="pl_option">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="pl_review-num">10</span>
+                        </p>
+                        <p class="pl_price">
+                            59,800원
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer_inner">
+            <ul>
+                <li>
+                    <a href="">회사소개</a>
+                </li>
+                <li>
+                    <a href="">인재채용</a>
+                </li>
+                <li>
+                    <a href="">제휴제안</a>
+                </li>
+                <li>
+                    <a href="">이용약관</a>
+                </li>
+                <li>
+                    <a href="">개인정보처리방침</a>
+                </li>
+            </ul>
+
+            <p>
+                엘리스 SW8기 3팀 쇼핑몰 프로젝트 /
+                본 페이지는 포트폴리오용 페이지입니다. <br>
+                Copyright. (c) 2024. 어쩌구저쩌구. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- 헤더 스크롤 이벤트 -->
+    <script>
+        const $main01 = document.querySelector('.main01');
+        const $header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            const triggerPoint = $main01.offsetTop + $main01.offsetHeight / 2;
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll >= triggerPoint) {
+                $header.classList.add('on');
+            } else {
+                $header.classList.remove('on');
+            }
+        });
+    </script>
+
+    <!-- 탑버튼  -->
+    <script>
+        const $topBtn = document.querySelector('.h_top>button')
+
+        $topBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
+        })
+    </script>
+</body>
+
+</html>

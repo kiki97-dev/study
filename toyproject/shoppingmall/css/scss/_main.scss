@@ -1,0 +1,277 @@
+.main01 {
+	.main-slide {
+		display: block;
+		width: 100%;
+		height: 100vh;
+		box-sizing: border-box;
+		position: relative;
+	}
+
+	.main-slide__container {
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+
+	.main-slide__wrapper {
+		width: 100%;
+	}
+
+	.main-slide__slide {
+		width: 100%;
+	}
+
+	.main-slide__slide > a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		font-size: 0;
+		overflow: hidden;
+		pointer-events: none;
+
+		> img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.main-slide__pagination {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 9;
+	}
+
+	.main-slide__pagination .swiper-pagination-bullet {
+		width: 12px;
+		height: 12px;
+		margin: 0px 5px;
+		background-color: #fff;
+		opacity: 0.8;
+	}
+
+	.main-slide__pagination .swiper-pagination-bullet-active {
+		background-color: #fff;
+		opacity: 1;
+	}
+}
+
+.main02 {
+	padding: 80px 0px;
+	&_inner {
+		max-width: 1300px;
+		margin: 0px auto;
+		box-sizing: border-box;
+		padding: 0px 30px;
+	}
+	&_title {
+		text-align: center;
+		margin-bottom: 80px;
+		strong {
+			font-size: 18px;
+			font-family: "Nunito", sans-serif;
+			display: block;
+			margin-bottom: 15px;
+			color: #ccc;
+			font-weight: 900;
+		}
+		h3 {
+			font-size: 42px;
+			font-weight: 700;
+			letter-spacing: -1px;
+			color: #222;
+			margin-bottom: 40px;
+		}
+		p {
+			color: #555;
+			font-size: 18px;
+		}
+	}
+}
+
+.product-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+    
+	li {
+		width: 22.75%;
+		margin-right: 3%;
+		margin-bottom: 50px;
+		box-sizing: border-box;
+		&:nth-of-type(4n) {
+			margin-right: 0;
+		}
+		.pl_img {
+			display: block;
+			width: 100%;
+			box-sizing: border-box;
+			border-radius: 15px;
+			overflow: hidden;
+			aspect-ratio: 1 / 1;
+			margin-bottom: 20px;
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+			}
+
+			img {
+				display: block;
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+				transition: all 0.3s;
+			}
+		}
+		.pl_title {
+			display: block;
+			color: #333;
+			font-size: 16px;
+			margin-bottom: 10px;
+		}
+		.pl_option {
+			font-size: 12px;
+			margin-bottom: 20px;
+			.pl_review-num {
+				margin-left: 5px;
+				font-size: 14px;
+			}
+		}
+		.pl_price {
+			font-family: "NanumSquareNeoHeavy";
+			display: flex;
+			font-weight: 900;
+			font-size: 16px;
+			margin-bottom: 20px;
+			.pl_price_before {
+				font-weight: 300;
+				color: #aaa;
+				text-decoration: line-through;
+				margin-left: 10px;
+			}
+			.pl_price_discount-rate {
+				flex: 1 0;
+				text-align: right;
+				font-family: "NanumSquareNeoHeavy";
+			}
+		}
+		.pl_tag {
+			span {
+				margin-right: 2px;
+				display: inline-block;
+				padding: 5px 10px;
+				border-radius: 20px;
+				border: 2px solid #333;
+				font-size: 12px;
+				font-weight: bold;
+				font-family: "NanumSquareNeoHeavy";
+			}
+		}
+	}
+
+    &-03 {
+        li {
+            width: 31%;
+            margin-right: 3%;
+
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+            &:nth-of-type(4n) {
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+.main03 {
+	background-image: url(../img/main04.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	&_inner {
+		max-width: 1300px;
+		padding: 80px 30px;
+		box-sizing: border-box;
+		margin: 0px auto;
+
+		h3 {
+			font-size: 32px;
+			color: #fff;
+			margin-bottom: 20px;
+		}
+		p {
+			max-width: 700px;
+			line-height: 1.4;
+			color: #fff;
+			font-size: 16px;
+			margin-bottom: 30px;
+		}
+		a {
+			font-size: 16px;
+			padding: 8px 20px;
+			display: inline-block;
+			color: #fff;
+			border: 2px solid #fff;
+			border-radius: 50px;
+			font-weight: bold;
+		}
+	}
+}
+
+.main04 {
+	padding: 80px 0px;
+	&_inner {
+		max-width: 1300px;
+		padding: 0px 30px;
+		box-sizing: border-box;
+		margin: 0px auto;
+		display: flex;
+	}
+	.md_pick {
+		width: 30%;
+
+		h3 {
+			font-size: 30px;
+			margin-bottom: 30px;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 20px;
+				height: 2px;
+				background-color: #333;
+				margin-top: 50px;
+			}
+		}
+
+		> p {
+			font-size: 16px;
+			line-height: 1.5;
+			color: #444;
+            margin-bottom: 50px;
+		}
+
+		ul {
+			li {
+				font-size: 0;
+				margin-bottom: 10px;
+				a {
+					padding: 8px 15px;
+					border-radius: 20px;
+					font-size: 14px;
+					display: inline-block;
+					color: #111;
+					font-family: "NanumSquareNeoHeavy";
+                    background-color: #ddd;
+				}
+			}
+		}
+	}
+	&_right {
+		width: 70%;
+	}
+}
