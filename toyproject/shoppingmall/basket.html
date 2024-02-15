@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쇼핑몰</title>
+
+    <!-- 웹 폰트 나눔스퀘어 네오 -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/931727edad.js" crossorigin="anonymous"></script>
+
+    <script src="./js/app.js"></script>
+
+</head>
+
+<body>
+    <header class="header on">
+
+    </header>
+
+    <section class="basket">
+        <div class="basket_inner">
+
+            <div class="basket_wrap">
+                <h3>BASKET</h3>
+                <div class="basket_all-wrap">
+                    <div>
+                        <input type="checkbox" id="all-check" style="display: none;">
+                        <label for="all-check" class="all-check-btn">모두선택</label>
+                    </div>
+
+                    <button>선택삭제</button>
+                </div>
+                <ul>
+                    <li>
+                        <div class="basket_select">
+                            <input type="checkbox" name="" id="bs_check-01" style="display: none;">
+                            <label for="bs_check-01" class="bs_check-btn"></label>
+                            <button>
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+
+                        <div class="basket_product">
+                            <div class="basket_img">
+                                <img src="./img/pl_01.jpg" alt="">
+                            </div>
+                            <div class="basket_info">
+                                <p class="bi_title">크래킹 스냅 레글런 후드티 블랙</p>
+                                <p class="bi_option">사이즈 : S / 컬러 : 블랙</p>
+                                <button>옵션변경</button>
+                            </div>
+                            <div class="basket_quantity">
+                                <button>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <span>1</span>
+                                <button>
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="bp_price">
+                                <p>50,000원</p>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="basket_select">
+                            <input type="checkbox" name="" id="bs_check-02" style="display: none;">
+                            <label for="bs_check-02" class="bs_check-btn"></label>
+                            <button>
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+
+                        <div class="basket_product">
+                            <div class="basket_img">
+                                <img src="./img/pl_02.jpg" alt="">
+                            </div>
+                            <div class="basket_info">
+                                <p class="bi_title">크래킹 스냅 레글런 후드티 블랙</p>
+                                <p class="bi_option">사이즈 : S / 컬러 : 블랙</p>
+                                <button>옵션변경</button>
+                            </div>
+                            <div class="basket_quantity">
+                                <button>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <span>1</span>
+                                <button>
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="bp_price">
+                                <p>50,000원</p>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="basket_select">
+                            <input type="checkbox" name="" id="bs_check-03" style="display: none;">
+                            <label for="bs_check-03" class="bs_check-btn"></label>
+                            <button>
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+
+                        <div class="basket_product">
+                            <div class="basket_img">
+                                <img src="./img/pl_03.jpg" alt="">
+                            </div>
+                            <div class="basket_info">
+                                <p class="bi_title">크래킹 스냅 레글런 후드티 블랙</p>
+                                <p class="bi_option">사이즈 : S / 컬러 : 블랙</p>
+                                <button>옵션변경</button>
+                            </div>
+                            <div class="basket_quantity">
+                                <button>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <span>1</span>
+                                <button>
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="bp_price">
+                                <p>50,000원</p>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="basket_side">
+                <div class="basket_price-wrap">
+                    <p><span>총 상품 금액</span> <span class="basket_price">55,000원</span></p>
+                    <p><span>총 배송비</span> <span class="basket_price">3,000원</span></p>
+                    <p><span>총 할인금액</span> <span class="basket_price">0원</span></p>
+                    <p class="price_sum"><span>결제금액</span> <span class="basket_price">58,000원</span></p>
+                </div>
+                <button class="purchase-button"><span>1</span>개 상품 구매하기</button>
+
+            </div>
+
+        </div>
+    </section>
+
+    <div class="option_modal">
+        <div class="option_modal_inner">
+            <div class="om_top">
+                <p>옵션선택</p>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="om_product">
+                <div class="om_img">
+                    <img src="./img/pl_01.jpg" alt="">
+                </div>
+                <div class="omp_name">
+                    <h3>크래킹 스냅 레글런 후드티 블랙</h3>
+                    <p>사이즈 : S / 컬러 : 블랙</p>
+                </div>
+            </div>
+
+            <div class="om_choice om_choice-size">
+                <select name="" id="">
+                    <option value="" disabled>사이즈</option>
+                    <option value="0">S</option>
+                    <option value="1">M</option>
+                    <option value="2">L</option>
+                </select>
+            </div>
+
+            <div class="om_choice om_choice-color">
+                <select name="" id="">
+                    <option value="" disabled>컬러</option>
+                    <option value="0">블랙</option>
+                    <option value="1">그레이</option>
+                    <option value="2">화이트</option>
+                </select>
+            </div>
+            <div class="om_option-list">
+                <p>
+                    사이즈 : S / 컬러 : 블랙
+                </p>
+                <div>
+                    <div class="om_amount">
+                        <button>
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <span>1</span>
+                        <button>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="om_price">
+                        <p>50,000원</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="om_btn">
+                <button class="om_cancell">취소</button>
+                <button class="om_checked">확인</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- 옵션변경 모달창 on/off -->
+    <script>
+        const $optionBtn = document.querySelectorAll('.basket_info>button');
+        const $optionModal = document.querySelector('.option_modal');
+        const $omTopCloseBtn = document.querySelector('.om_top>i');
+        const $omBtnCloseBtn = document.querySelector('.om_cancell');
+
+        $optionBtn.forEach((el) => {
+            el.addEventListener("click", () => {
+                $optionModal.classList.add('on');
+                document.body.style.overflow = 'hidden';
+            })
+        })
+
+        $omTopCloseBtn.addEventListener("click", () => {
+            $optionModal.classList.remove('on');
+            document.body.style.overflow = 'auto';
+        })
+
+        $omBtnCloseBtn.addEventListener("click", () => {
+            $optionModal.classList.remove('on');
+            document.body.style.overflow = 'auto';
+        })
+
+
+    </script>
+
+
+    <footer class="footer">
+
+    </footer>
+
+</body>
+
+</html>
