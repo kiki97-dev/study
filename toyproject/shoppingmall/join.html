@@ -26,45 +26,69 @@
                 <h3>JOIN</h3>
 
                 <form action="/join" method="post">
-                    <div>
-                        <p>이름</p>
+                    <div class="name-wrap">
+                        <p>
+                            이름
+                            <i class="fa-regular fa-circle-check"></i>
+                        </p>
                         <input class="join_name" type="text" name="name">
                     </div>
-                    <div>
-                        <p>연락처</p>
-                        <input class="join_email" type="tel" name="email" placeholder="01072527544">
+                    <div class="phone-wrap">
+                        <p>연락처
+                            <i class="fa-regular fa-circle-check"></i>
+
+                        </p>
+                        <input class="join_phone" type="tel" name="phone" placeholder="01072527544">
                     </div>
 
-                    <div>
-                        <p>주소</p>
-                        <input class="join_email" type="text" name="email" placeholder="우편번호찾기">
+                    <div class="address-wrap">
+                        <p>주소
+                            <i class="fa-regular fa-circle-check"></i>
+
+                        </p>
+                        <input class="join_address" type="text" name="address" placeholder="우편번호찾기">
                     </div>
 
-                    <div>
-                        <p>상세주소</p>
-                        <input class="join_email" type="text" name="email" placeholder="">
+                    <div class="address-wrap-2">
+                        <p>상세주소
+                            <i class="fa-regular fa-circle-check"></i>
+
+                        </p>
+                        <input class="join_address-2" type="text" name="address2" placeholder="">
                     </div>
 
-                    <div class="email-wrap">
-                        <p>이메일 주소</p>
-                        <input class="join_email" type="email" name="email" placeholder="예) kream@kream.co.kr">
+                    <div class="email-wrap email-wrap-01">
+                        <p>이메일 주소
+                            <i class="fa-regular fa-circle-check"></i>
+
+                        </p>
+                        <input class="join_email-01" type="email" name="email" placeholder="예) kream@kream.co.kr">
                         <button>이메일 인증</button>
                     </div>
 
-                    <div class="email-wrap">
-                        <p>이메일 인증번호 확인</p>
-                        <input class="join_email" type="" name="email" placeholder="이메일 인증번호">
+                    <div class="email-wrap email-wrap-02">
+                        <p>이메일 인증번호 확인
+                            <i class="fa-regular fa-circle-check"></i>
+
+                        </p>
+                        <input class="join_email-02" type="" name="email" placeholder="이메일 인증번호">
                         <button>인증 확인</button>
                     </div>
 
-                    <div>
-                        <p>비밀번호</p>
-                        <input class="join_password" type="password" name="password" maxlength="16">
+                    <div class="password-wrap">
+                        <p>비밀번호
+                            <i class="fa-regular fa-circle-check"></i>
+
+                        </p>
+                        <input class="join_password-01" type="password" name="password" maxlength="16">
                     </div>
 
-                    <div>
-                        <p>비밀번호 확인</p>
-                        <input class="join_password" type="password" name="password" maxlength="16">
+                    <div class="password-wrap-2">
+                        <p>비밀번호 확인
+                            <i class="fa-regular fa-circle-check"></i>
+
+                        </p>
+                        <input class="join_password-02" type="password" name="password" maxlength="16">
                     </div>
 
                     <input class="join_submit" type="submit" value="회원가입">
@@ -78,6 +102,91 @@
 
     </section>
 
+    <script>
+        const $joinName = document.querySelector('.join_name');
+        $joinName.addEventListener('input', function () {
+            if (isValidName(this.value)) {
+                $joinName.closest('.name-wrap').classList.remove('invalid');
+                $joinName.closest('.name-wrap').classList.add('valid');
+            } else {
+                $joinName.closest('.name-wrap').classList.remove('valid');
+                $joinName.closest('.name-wrap').classList.add('invalid');
+            }
+        });
+
+        const $joinPhone = document.querySelector('.join_phone');
+        $joinPhone.addEventListener('input', function () {
+            if (isValidPhoneNumber(this.value)) {
+                $joinPhone.closest('.phone-wrap').classList.remove('invalid');
+                $joinPhone.closest('.phone-wrap').classList.add('valid');
+            } else {
+                $joinPhone.closest('.phone-wrap').classList.remove('valid');
+                $joinPhone.closest('.phone-wrap').classList.add('invalid');
+            }
+        });
+
+        const $joinEmail01 = document.querySelector('.join_email-01');
+        $joinEmail01.addEventListener('input', function () {
+            if (validateEmail(this.value)) {
+                $joinEmail01.closest('.email-wrap-01').classList.remove('invalid');
+                $joinEmail01.closest('.email-wrap-01').classList.add('valid');
+            } else {
+                $joinEmail01.closest('.email-wrap-01').classList.remove('valid');
+                $joinEmail01.closest('.email-wrap-01').classList.add('invalid');
+            }
+        });
+
+        const $joinPassword01 = document.querySelector('.join_password-01');
+        $joinPassword01.addEventListener('input', function () {
+            if (isValidPassword(this.value)) {
+                $joinPassword01.closest('.password-wrap').classList.remove('invalid');
+                $joinPassword01.closest('.password-wrap').classList.add('valid');
+            } else {
+                $joinPassword01.closest('.password-wrap').classList.remove('valid');
+                $joinPassword01.closest('.password-wrap').classList.add('invalid');
+            }
+        });
+
+        const $joinPassword02 = document.querySelector('.join_password-02');
+        $joinPassword02.addEventListener('input', function () {
+            if (this.value === $joinPassword01.value) {
+                $joinPassword02.closest('.password-wrap-2').classList.remove('invalid');
+                $joinPassword02.closest('.password-wrap-2').classList.add('valid');
+            } else {
+                $joinPassword02.closest('.password-wrap-2').classList.remove('valid');
+                $joinPassword02.closest('.password-wrap-2').classList.add('invalid');
+            }
+        });
+
+
+        function isValidName(name) {
+            // 한글, 알파벳 대소문자만 허용하는 정규식
+            const re = /^[가-힣A-Za-z]+$/;
+            // 정규식 테스트 결과를 반환
+            return re.test(name);
+        }
+
+        function isValidPhoneNumber(phoneNumber) {
+            // 휴대폰 번호 형식을 검증하는 정규식
+            const re = /^010\d{8}$/;
+
+            // 정규식 테스트 결과를 반환
+            return re.test(phoneNumber);
+        }
+
+        function validateEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function isValidPassword(password) {
+            // 정규식: 8~16자의 영문 대소문자, 숫자, 특수문자가 1개 이상 조합
+            const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,16}$/;
+            return regex.test(password);
+        }
+
+
+    </script>
 
 
     <footer class="footer">

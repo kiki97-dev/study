@@ -1,7 +1,7 @@
 .join {
 	display: flex;
 	min-height: 100vh;
-	padding: 80px 0px;
+	padding: 200px 0px 80px;
 	box-sizing: border-box;
 
 	&_inner {
@@ -70,19 +70,47 @@
                 width: 100%;
 				font-size: 14px;
 				color: #222;
-				margin-bottom: 20px;
+				margin-bottom: 15px;
 				font-weight: bold;
+				display: flex;
+				align-items: center;
+				i{
+					display: none;
+					font-size: 16px;
+					margin-left: 5px;
+					color: inherit;
+				}
 			}
+			.invalid {
+				input {
+					border-color: #f15746;
+					&:focus {
+						border-color: #f15746;
+					}
+				}
+				p {
+					color: #f15746;
+				}
+
+			} 
+			.valid p{
+				color: rgb(0, 168, 0);
+				i {
+					display: block;
+				}
+			}
+			
 
 			input {
 				border: none;
 				border-bottom: 1px solid #ddd;
 				padding-bottom: 10px;
-				font-size: 16px;
+				font-size: 14px;
 				margin-bottom: 30px;
 				width: 100%;
 				box-sizing: border-box;
 				color: #222;
+				font-family: 'NanumSquareNeoBold';
 				&:focus-visible {
 					outline: 0;
 				}

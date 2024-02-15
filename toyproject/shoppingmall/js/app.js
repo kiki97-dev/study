@@ -4,20 +4,34 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', () => {
         loadHeader().then(() => {
             // 검색버튼 안만들어서 비활성화
-            const $headerSearchBtn = document.querySelector('.h_search')
+            const $headerSearchBtn = document.querySelector('.h_search');
             $headerSearchBtn.addEventListener("click", (e)=> {
                 e.preventDefault();
+            });
+
+            // 카테고리 호버시 메뉴 펼침
+            const $hmCategory = document.querySelector('.hm_category');
+            $hmCategory.addEventListener('mouseover', function(){
+                $hmCategory.classList.add('on');
             })
+            $hmCategory.addEventListener('mouseout', function(){
+                $hmCategory.classList.remove('on');
+            })
+
             
-            // 탑버튼
-            const $topBtn = document.querySelector('.h_top>button')
+
+
+
+            
+            // header02탑버튼
+            /* const $topBtn = document.querySelector('.h_top>button')
             $topBtn.addEventListener("click", () => {
                 window.scrollTo({
                     top: 0,
                     left: 0,
                     behavior: "smooth"
                 });
-            })
+            }) */
         }).catch(err => {
             console.error('헤더 로드 실패:', err);
         });

@@ -1,7 +1,7 @@
 .login {
 	display: flex;
 	min-height: 100vh;
-	padding: 80px 0px;
+	padding: 200px 0px 80px;
 	box-sizing: border-box;
 
 	&_inner {
@@ -39,12 +39,13 @@
 			p {
 				font-size: 14px;
 				color: #222;
-				margin-bottom: 20px;
+				margin-bottom: 15px;
 				font-weight: bold;
 			}
 
 			.login_email,
 			.login_password {
+				position: relative;
 				border: none;
 				border-bottom: 1px solid #ddd;
 				padding-bottom: 10px;
@@ -59,6 +60,24 @@
 				&:focus {
 					border: none;
 					border-bottom: 2px solid #444;
+				}
+			}
+			.input_error {
+				display: none;
+				font-size: 12px;
+				font-weight: 500;
+			}
+
+			.login-email-wrap.invalid, .login-password-wrap.invalid  {
+				p {
+					color: #f15746;
+				}
+				input {
+					border-color: #f15746;margin-bottom: 5px;
+				}
+				.input_error {
+					display: block;
+					margin-bottom: 25px;
 				}
 			}
 
