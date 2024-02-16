@@ -64,6 +64,33 @@
                         font-size: 12px;
 					}
 				}
+				&.address-wrap {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: end;
+					margin-bottom: 30px;
+                    justify-content: space-between;
+					p {
+						width: 100%;
+					}
+					input {
+						width: 65%;
+						margin-bottom: 0;
+						&.join_address {
+							margin-top: 15px;
+							width: 100%;
+						}
+					}
+					button {
+						width: 32%;
+						box-sizing: border-box;
+						background-color: #222;
+						color: #fff;
+						padding: 10px;
+                        border-radius: 5px;
+                        font-size: 12px;
+					}
+				}
 			}
 
 			p {
@@ -117,6 +144,9 @@
 				&:focus {
 					border: none;
 					border-bottom: 2px solid #444;
+				}
+				&.join_extraAddress {
+					margin-bottom: 20px;
 				}
 			}
 

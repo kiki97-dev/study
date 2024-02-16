@@ -499,6 +499,33 @@ button {
   border-radius: 5px;
   font-size: 12px;
 }
+.join_inner form > div.address-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+.join_inner form > div.address-wrap p {
+  width: 100%;
+}
+.join_inner form > div.address-wrap input {
+  width: 65%;
+  margin-bottom: 0;
+}
+.join_inner form > div.address-wrap input.join_address {
+  margin-top: 15px;
+  width: 100%;
+}
+.join_inner form > div.address-wrap button {
+  width: 32%;
+  box-sizing: border-box;
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
 .join_inner form p {
   width: 100%;
   font-size: 14px;
@@ -546,6 +573,9 @@ button {
 .join_inner form input:focus {
   border: none;
   border-bottom: 2px solid #444;
+}
+.join_inner form input.join_extraAddress {
+  margin-bottom: 20px;
 }
 .join_inner form .join_submit {
   border: none;
@@ -825,15 +855,15 @@ button {
 .basket_inner .basket_side .basket_price-wrap > p:last-child {
   margin-bottom: 0;
 }
-.basket_inner .basket_side .basket_price-wrap > p.price_sum {
+.basket_inner .basket_side .basket_price-wrap > p.bs_price_wrap {
   padding-top: 20px;
   border-top: 2px dashed #555;
 }
-.basket_inner .basket_side .basket_price-wrap > p.price_sum span {
+.basket_inner .basket_side .basket_price-wrap > p.bs_price_wrap span {
   font-family: "NanumSquareNeoHeavy";
   color: #111;
 }
-.basket_inner .basket_side .basket_price-wrap > p.price_sum .basket_price {
+.basket_inner .basket_side .basket_price-wrap > p.bs_price_wrap .bs_price {
   font-size: 20px;
   letter-spacing: -1px;
 }
