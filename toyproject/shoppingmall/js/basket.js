@@ -153,7 +153,7 @@ function openOptionModal(e) {
     $optionModal.querySelector('.om_option-list>p').innerHTML = allchoiceOption;
     $optionModal.querySelector('.om_amount>span').innerHTML = target.count;
     $optionModal.querySelector('.om_price>p').innerHTML = `${(target.count * target.price).toLocaleString('ko-KR')}원`;
-    
+
     //상품 옵션 불러오기
     let targetAllOption = target.allOption;
     for (let key in targetAllOption) {
@@ -161,6 +161,9 @@ function openOptionModal(e) {
         let optionArr = targetAllOption[key];
         $optionModal.querySelector('.om_choice-wrap').innerHTML += createAllOption(optionName, optionArr);
     }
+
+    //모달창에서 상품 옵션 모두 선택 시 최종 옵션 변경, 옵션띄운 상품정보 넣어줌
+    choiceOption(target);
 
 }
 
@@ -196,8 +199,8 @@ function decreaseCountModal(e) {
 
 //모달창 전체 옵션 리스트 dom 만들기
 function createAllOption(key, arr) {
-    let option = `<option value="" disabled>${key}</option>`;
-    for(let i = 0 ; i< arr.length; i++) {
+    let option = `<option value="" selected disabled>${key}</option>`;
+    for (let i = 0; i < arr.length; i++) {
         option += `<option value="${i}">${arr[i]}</option>`;
     }
 
@@ -208,4 +211,27 @@ function createAllOption(key, arr) {
             </select>
         </li>`
     )
+}
+
+function choiceOption(item) {
+    console.log(item);
+    const selects = document.querySelectorAll('select');
+    const option = {};
+    selects.forEach((el) => {
+        el.addEventListener("change", () => {
+            option[el[0].innerText] = el.value;
+            console.log(option);
+            if (selects.length == Object.keys(option).length) {
+                //선택한 옵션 전체 돌려서 글자 값 만들어주기
+                let allchoiceOption = '';
+                for (let key in option) {
+                    allchoiceOption += `${key} : ${item.allOption[key][option[key]]} / `;
+                }
+                allchoiceOption = allchoiceOption.slice(0, -2);
+
+                $optionModal.querySelector('.om_option-list>p').innerHTML = allchoiceOption;
+            }
+
+        })
+    })
 }
