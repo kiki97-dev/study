@@ -167,8 +167,7 @@ function openOptionModal(e) {
 
 }
 
-function closeOptionModal(e) {
-    const item = e.closest('.basket-list');
+function closeOptionModal() {
     $optionModal.classList.remove('on');
     document.body.style.overflow = 'auto';
     $optionModal.querySelector('.om_choice-wrap').innerHTML = ''; //옵션창 비워줘야댐
@@ -214,13 +213,11 @@ function createAllOption(key, arr) {
 }
 
 function choiceOption(item) {
-    console.log(item);
     const selects = document.querySelectorAll('select');
     const option = {};
     selects.forEach((el) => {
         el.addEventListener("change", () => {
             option[el[0].innerText] = el.value;
-            console.log(option);
             if (selects.length == Object.keys(option).length) {
                 //선택한 옵션 전체 돌려서 글자 값 만들어주기
                 let allchoiceOption = '';
@@ -234,4 +231,38 @@ function choiceOption(item) {
 
         })
     })
+}
+
+function updateOption(e) {
+    const item = e.closest('.option_modal');
+    const target = basketItemList.find(obj => obj.id == item.id);
+    const selects = document.querySelectorAll('select');
+    const currentChoiceOption = {};
+    let isOptionSelected = true;
+
+    selects.forEach((el) => {
+        currentChoiceOption[el[0].innerText] = target.allOption[el[0].innerText][el.value];
+    })
+
+    Object.values(currentChoiceOption).forEach((el) => {
+        if (el == undefined) { 
+            isOptionSelected = false;
+         };
+    })
+
+    if (isOptionSelected) {
+        target.count = Number(item.querySelector('.om_amount>span').innerHTML);
+        target.choiceOption = {
+            ...currentChoiceOption
+        }
+        //리스트 초기화하고 업데이트된 객체로 다시 뿌려줌
+        $basketListWrap.innerHTML = ''; 
+        basketItemList.forEach((item) => {
+            $basketListWrap.innerHTML += createBasketLi(item);
+        })
+        closeOptionModal()
+    }
+
+
+
 }
